@@ -1,225 +1,554 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouquet Lounge - Premium Flowers & Chocolates Delivery in Sahiwal</title>
-    <meta name="description" content="Send beautiful flower bouquets and premium chocolates to your loved ones in Sahiwal. Perfect for Eid, birthdays, anniversaries and all special occasions.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Bouquet Lounge Sahiwal - Premium Flowers, Gift Hampers for Eid, Birthdays, Anniversaries. Fresh Bouquets Delivered in Sahiwal.">
+    <meta name="keywords" content="flowers sahiwal, bouquet sahiwal, gift hampers, eid gifts, birthday flowers, anniversary bouquet">
+    <title>Bouquet Lounge Sahiwal - Premium Flowers & Gift Hampers</title>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">🌸 Bouquet Lounge</div>
-                <ul class="nav-menu">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-spa"></i>
+                    <span>Bouquet Lounge</span>
+                </div>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#occasions">Occasions</a></li>
                     <li><a href="#products">Products</a></li>
+                    <li><a href="#occasions">Occasions</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-toggle">☰</button>
+                <div class="nav-actions">
+                    <a href="https://wa.me/923001234567" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                    <div class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay">
-            <div class="container hero-content">
-                <h1 class="hero-title">Send Love, Send Flowers</h1>
-                <p class="hero-subtitle">Premium Bouquets & Chocolates Delivered in Sahiwal</p>
-                <p class="hero-price">Starting from PKR 500</p>
-                <a href="#contact" class="cta-button">Order Now</a>
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="subtitle">Welcome to</span>
+                    Bouquet Lounge Sahiwal
+                </h1>
+                <p class="hero-text">Premium Fresh Flowers & Luxury Gift Hampers for Every Special Occasion</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <a href="https://wa.me/923001234567" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Order
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Fresh Flowers</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Custom Hampers</span>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- Occasions Section -->
-    <section id="occasions" class="occasions">
+    <section class="occasions" id="occasions">
         <div class="container">
-            <h2 class="section-title">Perfect for Every Occasion</h2>
+            <div class="section-header">
+                <h2 class="section-title">Perfect for Every Occasion</h2>
+                <p class="section-subtitle">Celebrate life's special moments with our curated collections</p>
+            </div>
             <div class="occasions-grid">
-                <div class="occasion-card">
-                    <div class="occasion-icon">🌙</div>
-                    <h3>Eid Celebrations</h3>
-                    <p>Make Eid special with beautiful bouquets and premium chocolates</p>
+                <div class="occasion-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="occasion-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Eid Special</h3>
+                    <p>Premium gift hampers & flower arrangements</p>
+                    <a href="#products" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎂</div>
+                <div class="occasion-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="occasion-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
                     <h3>Birthdays</h3>
-                    <p>Celebrate birthdays with stunning flower arrangements</p>
+                    <p>Colorful bouquets to make their day special</p>
+                    <a href="#products" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">💝</div>
+                <div class="occasion-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="occasion-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
                     <h3>Anniversaries</h3>
-                    <p>Express your love with romantic bouquets</p>
+                    <p>Romantic roses & luxury gift sets</p>
+                    <a href="#products" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🎊</div>
-                    <h3>Special Events</h3>
-                    <p>Weddings, graduations, and all celebrations</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">🌟</div>
-                    <h3>Islamic Occasions</h3>
-                    <p>Ramadan, Milad, and other blessed events</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-icon">💐</div>
-                    <h3>Just Because</h3>
-                    <p>Surprise your loved ones any day</p>
+                <div class="occasion-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="occasion-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Celebrations</h3>
+                    <p>Success, graduations & achievements</p>
+                    <a href="#products" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
+    <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Our Collections</h2>
+            <div class="section-header">
+                <h2 class="section-title">Our Premium Collection</h2>
+                <p class="section-subtitle">Handcrafted with love, delivered with care</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="bouquets">Bouquets</button>
+                <button class="filter-btn" data-filter="hampers">Gift Hampers</button>
+                <button class="filter-btn" data-filter="roses">Roses</button>
+            </div>
+
             <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">🌹</div>
-                    <h3>Classic Roses</h3>
-                    <p class="product-price">PKR 500 - 5,000</p>
-                    <p>Timeless red, pink, and white roses</p>
+                <!-- Product 1 -->
+                <div class="product-card" data-category="bouquets">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500" alt="Mixed Flower Bouquet">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Premium%20Mixed%20Bouquet" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Mixed Bouquet</h3>
+                        <p class="product-desc">Fresh seasonal flowers beautifully arranged</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 2,500</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">💐</div>
-                    <h3>Mixed Bouquets</h3>
-                    <p class="product-price">PKR 1,000 - 10,000</p>
-                    <p>Colorful arrangements for any occasion</p>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="roses">
+                    <div class="product-badge" style="background: #e74c3c;">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500" alt="Red Roses Bouquet">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Red%20Roses%20Bouquet" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Red Roses Bouquet</h3>
+                        <p class="product-desc">12 Premium red roses with elegant wrapping</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 3,000</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">🍫</div>
-                    <h3>Premium Chocolates</h3>
-                    <p class="product-price">PKR 800 - 8,000</p>
-                    <p>Imported and local premium brands</p>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="hampers">
+                    <div class="product-badge" style="background: #9b59b6;">Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549888834-3ec93abae044?w=500" alt="Luxury Gift Hamper">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Luxury%20Gift%20Hamper" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Gift Hamper</h3>
+                        <p class="product-desc">Flowers, chocolates & premium gift items</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 5,500</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">🎁</div>
-                    <h3>Gift Hampers</h3>
-                    <p class="product-price">PKR 2,000 - 20,000</p>
-                    <p>Flowers, chocolates & gifts combined</p>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="bouquets">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500" alt="Sunflower Delight">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Sunflower%20Delight" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sunflower Delight</h3>
+                        <p class="product-desc">Bright sunflowers to bring sunshine</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 2,200</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">🌺</div>
-                    <h3>Luxury Arrangements</h3>
-                    <p class="product-price">PKR 10,000 - 50,000</p>
-                    <p>Premium designer bouquets</p>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="hampers">
+                    <div class="product-badge" style="background: #f39c12;">Eid Special</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500" alt="Eid Gift Hamper">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Eid%20Gift%20Hamper" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Eid Gift Hamper</h3>
+                        <p class="product-desc">Special Eid hamper with dates & sweets</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 4,000</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card featured">
-                    <div class="product-image">👑</div>
-                    <h3>Royal Collection</h3>
-                    <p class="product-price">PKR 50,000 - 100,000</p>
-                    <p>Exclusive luxury gifts for VIPs</p>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="roses">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500" alt="Pink Roses Elegance">
+                        <div class="product-overlay">
+                            <a href="https://wa.me/923001234567?text=I%20want%20to%20order%20Pink%20Roses%20Elegance" class="overlay-btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pink Roses Elegance</h3>
+                        <p class="product-desc">Soft pink roses for gentle celebrations</p>
+                        <div class="product-price">
+                            <span class="price">Rs. 2,800</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-us">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Why Bouquet Lounge?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">✨</div>
-                    <h3>Fresh Flowers</h3>
-                    <p>Daily fresh imports and local blooms</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600" alt="Bouquet Lounge">
+                    <div class="about-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Since 2020</span>
+                    </div>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Same-day delivery across Sahiwal</p>
+                <div class="about-text">
+                    <h2 class="section-title">About Bouquet Lounge</h2>
+                    <p class="lead">Sahiwal's Premier Flower & Gift Destination</p>
+                    <p>At Bouquet Lounge, we believe every occasion deserves to be celebrated with fresh, beautiful flowers and thoughtful gifts. Located in the heart of Sahiwal, we've been spreading joy and creating memorable moments since 2020.</p>
+                    <p>Our expert florists handcraft each bouquet with premium, fresh flowers sourced daily. Whether it's a birthday, anniversary, Eid, or any special celebration, we create arrangements that speak from the heart.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>5000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Fresh Flowers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Order Support</p>
+                        </div>
+                    </div>
+
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Same-day delivery in Sahiwal</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom arrangements available</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Premium quality guaranteed</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Custom Designs</h3>
-                    <p>Personalized arrangements on request</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real reviews from real people</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Absolutely stunning bouquet for my wife's birthday! Fresh flowers and beautiful arrangement. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AH</div>
+                        <div>
+                            <h4>Ahmed Hassan</h4>
+                            <span>Sahiwal</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">💯</div>
-                    <h3>Quality Guaranteed</h3>
-                    <p>100% satisfaction or money back</p>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best gift hamper service in Sahiwal! The Eid hamper was perfect. Fast delivery and great quality!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">SF</div>
+                        <div>
+                            <h4>Sara Fatima</h4>
+                            <span>Sahiwal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional service and premium quality flowers. Made our anniversary extra special. Thank you Bouquet Lounge!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">UK</div>
+                        <div>
+                            <h4>Usman Khan</h4>
+                            <span>Sahiwal</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Order Now</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We're here to help make your celebrations special</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <div>
-                            <strong>Location</strong>
-                            <p>Sahiwal, Pakistan</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
                         </div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick orders & inquiries</p>
+                        <a href="https://wa.me/923001234567" class="contact-link">+92 300 1234567</a>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📧</span>
-                        <div>
-                            <strong>Email</strong>
-                            <p>Shahrozmirzallc@gmail.com</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
+                        <h3>Phone</h3>
+                        <p>Call us anytime</p>
+                        <a href="tel:+923001234567" class="contact-link">+92 300 1234567</a>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">⏰</span>
-                        <div>
-                            <strong>Timing</strong>
-                            <p>9:00 AM - 9:00 PM (Daily)</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
+                        <h3>Location</h3>
+                        <p>Visit our store</p>
+                        <span class="contact-link">Sahiwal, Punjab, Pakistan</span>
                     </div>
-                    <a href="https://wa.me/923001234567" class="whatsapp-btn" target="_blank">
-                        📱 WhatsApp Order
-                    </a>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Working Hours</h3>
+                        <p>Open every day</p>
+                        <span class="contact-link">9:00 AM - 10:00 PM</span>
+                    </div>
                 </div>
-                <form class="contact-form" id="orderForm">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" required>
-                    <select name="occasion" required>
-                        <option value="">Select Occasion</option>
-                        <option value="eid">Eid</option>
-                        <option value="birthday">Birthday</option>
-                        <option value="anniversary">Anniversary</option>
-                        <option value="wedding">Wedding</option>
-                        <option value="ramadan">Ramadan</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <select name="budget" required>
-                        <option value="">Select Budget</option>
-                        <option value="500-2000">PKR 500 - 2,000</option>
-                        <option value="2000-5000">PKR 2,000 - 5,000</option>
-                        <option value="5000-10000">PKR 5,000 - 10,000</option>
-                        <option value="10000-25000">PKR 10,000 - 25,000</option>
-                        <option value="25000-50000">PKR 25,000 - 50,000</option>
-                        <option value="50000+">PKR 50,000+</option>
-                    </select>
-                    <textarea name="message" rows="4" placeholder="Special Requirements or Message" required></textarea>
-                    <button type="submit" class="submit-btn">Send Order Request</button>
-                </form>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="eid">Eid</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Bouquet Lounge - Sahiwal's Premium Flower & Chocolate Delivery</p>
-            <p>Spreading love and happiness across Sahiwal 🌸</p>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-spa"></i>
+                        <span>Bouquet Lounge</span>
+                    </div>
+                    <p>Sahiwal's premier destination for fresh flowers and luxury gift hampers. Making every occasion memorable since 2020.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/923001234567"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#occasions">Occasions</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">Bouquets</a></li>
+                        <li><a href="#products">Gift Hampers</a></li>
+                        <li><a href="#products">Roses</a></li>
+                        <li><a href="#products">Custom Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@bouquetlounge.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Sahiwal, Punjab</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bouquet Lounge Sahiwal. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> by Cosmic Stack</p>
+            </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
