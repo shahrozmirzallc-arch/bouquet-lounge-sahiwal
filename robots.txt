@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bouquet-lounge-sahiwal.vercel.app/sitemap.xml
