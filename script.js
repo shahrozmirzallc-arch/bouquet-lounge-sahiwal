@@ -1,58 +1,72 @@
 // ==========================================
-// NAVIGATION MENU TOGGLE
+// BOUQUET LOUNGE - INTERACTIVE FEATURES
 // ==========================================
+
+// Mobile Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
         const icon = menuToggle.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
-    });
-});
-
-// ==========================================
-// NAVBAR SCROLL EFFECT
-// ==========================================
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    }
-});
-
-// ==========================================
-// SMOOTH SCROLLING
-// ==========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
+// Navbar Scroll Effect
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
 });
 
-// ==========================================
-// PRODUCT FILTER
-// ==========================================
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTop');
+
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Products Filter
 const filterButtons = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('.product-card');
 
@@ -63,10 +77,10 @@ filterButtons.forEach(button => {
         // Add active class to clicked button
         button.classList.add('active');
         
-        const filter = button.getAttribute('data-filter');
+        const filterValue = button.getAttribute('data-filter');
         
         productCards.forEach(card => {
-            if (filter === 'all') {
+            if (filterValue === 'all') {
                 card.style.display = 'block';
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -74,7 +88,7 @@ filterButtons.forEach(button => {
                 }, 10);
             } else {
                 const category = card.getAttribute('data-category');
-                if (category === filter) {
+                if (category === filterValue) {
                     card.style.display = 'block';
                     setTimeout(() => {
                         card.style.opacity = '1';
@@ -92,59 +106,78 @@ filterButtons.forEach(button => {
     });
 });
 
-// ==========================================
-// SCROLL TO TOP BUTTON
-// ==========================================
-const scrollTopBtn = document.getElementById('scrollTop');
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopBtn.classList.add('visible');
-    } else {
-        scrollTopBtn.classList.remove('visible');
-    }
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const phone = contactForm.querySelector('input[type="tel"]').value;
+        const occasion = contactForm.querySelector('select').value;
+        const message = contactForm.querySelector('textarea').value;
+        
+        // Create WhatsApp message
+        const whatsappMessage = `
+Hello! I'm interested in your services.
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+Name: ${name}
+Phone: ${phone}
+Occasion: ${occasion}
+Message: ${message}
+        `.trim();
+        
+        // Open WhatsApp
+        const whatsappURL = `https://wa.me/923001234567?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappURL, '_blank');
+        
+        // Show success message
+        alert('Thank you! Redirecting to WhatsApp...');
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Skip if href is just "#"
+        if (href === '#') return;
+        
+        e.preventDefault();
+        
+        const target = document.querySelector(href);
+        if (target) {
+            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// ==========================================
-// CONTACT FORM SUBMISSION
-// ==========================================
-const contactForm = document.getElementById('contactForm');
+// Scroll Indicator Click
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        const occasionsSection = document.querySelector('#occasions');
+        if (occasionsSection) {
+            occasionsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const phone = contactForm.querySelector('input[type="tel"]').value;
-    const occasion = contactForm.querySelector('select').value;
-    const message = contactForm.querySelector('textarea').value;
-    
-    // Create WhatsApp message
-    const whatsappMessage = `*New Order Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Occasion:* ${occasion}%0A*Message:* ${message}`;
-    
-    // Redirect to WhatsApp
-    window.open(`https://wa.me/923001234567?text=${whatsappMessage}`, '_blank');
-    
-    // Reset form
-    contactForm.reset();
-    
-    // Show success message
-    alert('Thank you! We will contact you soon via WhatsApp.');
-});
-
-// ==========================================
-// SCROLL ANIMATIONS
-// ==========================================
+// Animate elements on scroll
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -156,36 +189,35 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements
 document.querySelectorAll('.product-card, .occasion-card, .testimonial-card, .contact-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
 
-// ==========================================
-// LOADING ANIMATION
-// ==========================================
+// Add loading animation
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
+    document.body.classList.add('loaded');
 });
 
-// ==========================================
-// HERO SCROLL INDICATOR
-// ==========================================
-const scrollIndicator = document.querySelector('.scroll-indicator');
-if (scrollIndicator) {
-    scrollIndicator.addEventListener('click', () => {
-        const occasionsSection = document.getElementById('occasions');
-        if (occasionsSection) {
-            occasionsSection.scrollIntoView({ behavior: 'smooth' });
+// Prevent form submission on enter in text fields (except textarea)
+document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(input => {
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
         }
     });
-}
+});
 
-console.log('🌸 Bouquet Lounge Website Loaded Successfully!');
+// Add smooth transitions to product images
+document.querySelectorAll('.product-image img').forEach(img => {
+    img.addEventListener('load', function() {
+        this.style.opacity = '1';
+    });
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.5s ease';
+});
+
+console.log('🌸 Bouquet Lounge Website Loaded Successfully! 🌸');
