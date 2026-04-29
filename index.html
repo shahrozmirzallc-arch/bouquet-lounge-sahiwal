@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bouquet Lounge Sahiwal - Premium Flowers, Gift Hampers for Eid, Birthdays, Anniversaries. Fresh Bouquets Delivered in Sahiwal.">
     <meta name="keywords" content="flowers sahiwal, bouquet sahiwal, gift hampers, eid gifts, birthday flowers, anniversary bouquet">
+    <meta name="author" content="Bouquet Lounge Sahiwal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bouquet-lounge-sahiwal.vercel.app/">
     <title>Bouquet Lounge Sahiwal - Premium Flowers & Gift Hampers</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23667eea'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌸%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23667eea'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌸%3C/text%3E%3C/svg%3E">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -24,6 +28,12 @@
     <meta property="twitter:description" content="Premium Fresh Flowers, Gift Hampers for Eid, Birthdays, Anniversaries. Fast Delivery in Sahiwal.">
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=1200">
     
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -32,35 +42,74 @@
     
     <link rel="stylesheet" href="./style.css">
     
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data - LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "FloristShop",
         "name": "Bouquet Lounge Sahiwal",
         "description": "Premium Fresh Flowers & Luxury Gift Hampers for Every Special Occasion in Sahiwal",
-        "image": "https://bouquet-lounge-sahiwal.vercel.app/logo.png",
+        "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=1200",
+        "logo": "https://bouquet-lounge-sahiwal.vercel.app/logo.png",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Main Market",
             "addressLocality": "Sahiwal",
             "addressRegion": "Punjab",
-            "addressCountry": "Pakistan"
+            "postalCode": "57000",
+            "addressCountry": "PK"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "30.6667",
+            "longitude": "73.1167"
         },
         "telephone": "+923001234567",
+        "email": "info@bouquetlounge.com",
         "url": "https://bouquet-lounge-sahiwal.vercel.app",
-        "openingHours": "Mo-Su 09:00-22:00",
-        "priceRange": "Rs. 2000 - Rs. 10000",
-        "servesCuisine": "",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "22:00"
+        },
+        "priceRange": "PKR 2000 - PKR 10000",
+        "currenciesAccepted": "PKR",
+        "paymentAccepted": "Cash, Bank Transfer",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "150"
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
         },
         "sameAs": [
             "https://www.facebook.com/bouquetloungesahiwal",
             "https://www.instagram.com/bouquetloungesahiwal"
         ]
+    }
+    </script>
+    
+    <!-- Schema.org - Website -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Bouquet Lounge Sahiwal",
+        "url": "https://bouquet-lounge-sahiwal.vercel.app",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bouquet-lounge-sahiwal.vercel.app/#products?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
 </head>

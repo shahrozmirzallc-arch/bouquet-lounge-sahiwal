@@ -1,4 +1,12 @@
+# Bouquet Lounge Sahiwal - Robots.txt
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.vercel/
 
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://bouquet-lounge-sahiwal.vercel.app/sitemap.xml
