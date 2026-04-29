@@ -26,3 +26,7 @@ Email: Shahrozmirzallc@gmail.com
 ---
 
 Built with ❤️ by Mercury
+
+---
+
+🚀 **Auto-Deploy Active** - Connected to Vercel via GitHub
