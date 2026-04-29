@@ -1225,6 +1225,10 @@ section {
     }
     
     /* Navigation Mobile */
+    .nav-content {
+        padding: 0.8rem 0;
+    }
+    
     .nav-links {
         position: fixed;
         top: 70px;
@@ -1258,20 +1262,36 @@ section {
     }
     
     .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        gap: 0.4rem;
     }
     
     .logo i {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+    
+    .logo span {
+        white-space: nowrap;
+    }
+    
+    .nav-actions {
+        gap: 0.6rem;
     }
     
     .whatsapp-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        gap: 0.4rem;
+    }
+    
+    .whatsapp-btn i {
+        font-size: 1rem;
     }
     
     /* Hero Section Mobile */
@@ -1557,7 +1577,43 @@ section {
     }
     
     .container {
-        padding: 0 12px;
+        padding: 0 10px;
+    }
+    
+    .nav-content {
+        padding: 0.7rem 0;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+        gap: 0.3rem;
+    }
+    
+    .logo i {
+        font-size: 1.4rem;
+    }
+    
+    .whatsapp-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+        gap: 0.3rem;
+    }
+    
+    .whatsapp-btn i {
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-btn span {
+        display: none;
+    }
+    
+    .whatsapp-btn::after {
+        content: 'Order';
+    }
+    
+    .menu-toggle {
+        font-size: 1.4rem;
+        padding: 0.4rem;
     }
     
     .hero {
