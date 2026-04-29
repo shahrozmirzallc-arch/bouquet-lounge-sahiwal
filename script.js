@@ -1,21 +1,12 @@
 // Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Animate hamburger
-    hamburger.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
     });
-});
+}
 
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,56 +18,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navMenu.style.display = 'none';
+            }
         }
     });
 });
 
-// WhatsApp Form Submission
+// Form Submission
 const orderForm = document.getElementById('orderForm');
 
-orderForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.querySelector('input[name="name"]').value;
-    const phone = document.querySelector('input[name="phone"]').value;
-    const occasion = document.querySelector('select[name="occasion"]').value;
-    const budget = document.querySelector('select[name="budget"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
-    
-    // Format WhatsApp message
-    const whatsappMessage = `
-🌸 *New Order from Bouquet Lounge Website* 🌸
+if (orderForm) {
+    orderForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(orderForm);
+        const data = Object.fromEntries(formData);
+        
+        // Create WhatsApp message
+        const whatsappMessage = `
+*New Order from Bouquet Lounge Website*
 
-👤 *Name:* ${name}
-📱 *Phone:* ${phone}
-🎉 *Occasion:* ${occasion.charAt(0).toUpperCase() + occasion.slice(1)}
-💰 *Budget:* ${budget}
-📝 *Message:* ${message}
+👤 Name: ${data.name}
+📧 Email: ${data.email}
+📱 Phone: ${data.phone}
+🎉 Occasion: ${data.occasion}
+💰 Budget: ${data.budget}
+📝 Message: ${data.message}
+        `.trim();
+        
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        
+        // Replace with actual WhatsApp number
+        const whatsappNumber = '923001234567';
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Show success message
+        alert('Thank you! Redirecting to WhatsApp to complete your order.');
+        
+        // Reset form
+        orderForm.reset();
+    });
+}
 
-_Sent from bouquet-lounge.vercel.app_
-    `.trim();
-    
-    // Encode message for URL
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    
-    // WhatsApp number (replace with actual number)
-    const whatsappNumber = '923001234567'; // Update this with actual number
-    
-    // Open WhatsApp
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-    
-    // Reset form
-    orderForm.reset();
-    
-    // Show success message
-    alert('✅ Redirecting to WhatsApp! Your order details are ready to send.');
-});
-
-// Scroll Animation for Cards
+// Scroll Animation
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -89,23 +82,24 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all cards
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.occasion-card, .product-card, .info-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
+document.querySelectorAll('.occasion-card, .product-card, .feature').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
 });
 
-// Add floating animation to hero
-const hero = document.querySelector('.hero-content h1');
-if (hero) {
-    setInterval(() => {
-        hero.style.transform = 'translateY(-5px)';
-        setTimeout(() => {
-            hero.style.transform = 'translateY(0)';
-        }, 500);
-    }, 2000);
-}
+// Add scroll effect to navbar
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('header');
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+    } else {
+        navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+    }
+    
+    lastScroll = currentScroll;
+});
